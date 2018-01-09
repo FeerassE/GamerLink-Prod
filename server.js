@@ -61,6 +61,10 @@ app.get('/users/:displayName', function(req,res) {
     })
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
+
 
 // Make sure to include. Connects to localhost
 app.listen(port, ()=> {

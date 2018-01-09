@@ -4,7 +4,7 @@ export const FETCH_USERS = 'FETCH_USERS';
 export const SET_USER = 'SET_USER';
 
 export function fetchUsers() {
-    const request = axios.get('//localhost:8080/users')
+    const request = axios.get('/users')
 
     return {
         type: FETCH_USERS,
@@ -13,7 +13,7 @@ export function fetchUsers() {
 }
 
 export function setUser(user) {
-    const request = axios.get(`//localhost:8080/users/${user}`)
+    const request = axios.get(`/users/${user}`)
 
     return {
         type: SET_USER,
