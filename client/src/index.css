@@ -1,0 +1,182 @@
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "nothing content";
+    font-family: AvenirNext-Regular;
+}
+
+#root {
+    grid-area: content;
+}
+
+
+.username {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 200px;
+    height: 60px;
+    padding-bottom: 10px;
+}
+
+/* Actual Username */
+.username h4 {
+    font-size: 24px;
+    color: #4A4A4A;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+/* Last updated */
+.username h5 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 10px;
+    color: #9B9B9B
+}
+
+.searchForm {
+    position: relative;
+    width: 432px;
+    height: 36px;
+}
+.searchIcon {
+    position: absolute;
+    top: 10px;
+    left: 400px;
+    cursor: pointer;
+}
+.searchBar {
+    width: 417px;
+    height: 36px;
+    border-radius: 3px;
+    border: 0.5px solid rgba(206, 203, 203, 0.829);
+    font-size: 14px;
+    color: rgb(172, 171, 171);
+    padding-left: 10px;
+    box-shadow: 0px 0px 0.5px rgba(206, 203, 203, 0.829);
+
+}
+
+/* Not Found */
+.notFound {
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(172, 171, 171);
+    font-size: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.statContainer {
+    width: 440px;
+}
+
+/* Stat Boxes */
+.stats {
+    width: 141px;
+    height: 96px;
+    margin-right: 4px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow:0px 0px 0px 1px #F3F3F3 inset;
+    box-shadow: 0px 1px 3px rgba(167, 165, 165, 0.829);
+}
+
+/* Stat Names */
+.stats h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: lighter;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+/* Stat Numbers */
+.stats p {
+    margin: 0px;
+    margin-top: 13px;
+    font-size: 36px;
+    color: #4A4A4A;
+    font-family: AvenirNext-Bold;
+}
+
+
+.rankStatsContainer {
+    position: relative;
+    width:432px;
+    height: 105px;
+    border-radius: 3px;
+    margin-top: 5px;
+    box-shadow:0px 0px 0px 1px #F3F3F3 inset;
+    box-shadow: 0px 1px 3px rgba(190, 190, 190, 0.829);
+    color: #4A4A4A;
+    font-family: AvenirNext-Regular;
+    font-weight: lighter;
+}
+
+/* Rank Stat Type Name */
+.rankStatsContainer h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    padding-top: 6px;
+    font-size: 14px;
+}
+
+.rankStatsContainer img {
+    max-height: 40%;
+    max-width: 40%;
+    position: absolute;
+    left: 370px;
+    top: 40px;
+    opacity: 100%;
+    filter: blur(3px);
+    -webkit-filter: drop-shadow(0.5px 0px 0.3px rgb(75, 74, 74));
+    filter: drop-shadow(0.5px 0px 0.3px rgb(75, 74, 74));
+}
+.rankStats {
+    display: inline-block;
+    height: 100%;
+    margin-top: 10px;
+}
+
+/* Rank Stats Number */
+.rankStats p {
+    display: inline-block;
+    font-family: AvenirNext-Bold;
+    margin: 0px;
+    font-size: 34px;
+    line-height: 34px;
+}
+
+/* Rank Stats Title */
+.rankStats h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#rankStatGamesPlayed {
+    position: absolute;
+    left: 15px;
+    text-align: center;
+}
+
+/* /* #rankStatGamesPlayed p {
+    margin-left: 20px;
+} */
+
+#rankStatTopPercentile {
+    position: absolute;
+    left: 120px;
+    text-align: center;
+}  
+
+#rankStatDivision {
+    position: absolute;
+    left: 275px;
+}
+
