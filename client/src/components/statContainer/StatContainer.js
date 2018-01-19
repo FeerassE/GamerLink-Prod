@@ -25,11 +25,9 @@ class StatContainer extends Component {
         let nowDate_ms = nowDate.getTime();
 
         let difference_ms = nowDate_ms - updateDate_ms ;
-        return Math.round(difference_ms/oneDay);
-       
+        return Math.abs(Math.round(difference_ms/oneDay));
         
     }
-
 
     render(){
         return(
@@ -39,7 +37,7 @@ class StatContainer extends Component {
                     </div> :
                     <div className="username"> 
                         <h4>{this.props.currentUser.displayName}</h4>
-                        <h5>Last Updated: {this.setDateTime()} days go</h5>
+                        <h5>Last Updated: {this.setDateTime()} days ago</h5>
                     </div>
                 }
                 <Wins />

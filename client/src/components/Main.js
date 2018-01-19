@@ -4,7 +4,7 @@ import '../index.css';
 
 import App from './App';
 import NotFound from './NotFound';
-import SearchBar from './SearchBar'
+import SearchBar from './searchBarContainer/SearchBar'
 
 class Main extends Component {
   render() {

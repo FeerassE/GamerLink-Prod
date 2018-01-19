@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { setUser } from '../actions'
+import { setUser } from '../../actions'
 
 import { Redirect, withRouter } from 'react-router-dom'
+
+import DropDown from './DropDown'
 
 
 class SearchBar extends Component {
@@ -13,10 +15,13 @@ class SearchBar extends Component {
         this.state = {
             value: 'Look up user',
             redirect: false,
+            dropDownOn: false
         };
+        
         this.onChangeHandler = this.onChangeHandler.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clickHandler = this.clickHandler.bind(this);
+        this.handleDropDown = this.handleDropDown.bind(this);
       }
 
     onChangeHandler(event){
@@ -35,7 +40,10 @@ class SearchBar extends Component {
         
         this.setState({value: ''})
     }
-    
+    handleDropDown(){
+        this.setState({dropDownOn: !this.state.dropDownOn});
+    }
+
     clickHandler(){
         this.setState({value: ''})
     }
@@ -46,6 +54,7 @@ class SearchBar extends Component {
                 {this.state.redirect ? <Redirect to="/notfound"/> : <Redirect to="/"/>}
                 <form onSubmit={this.handleSubmit} className="searchForm">
                     <img src="./images/icons/search.png" className="searchIcon" onClick={this.handleSubmit}/>
+                    <div className="arrow-down" onClick={this.handleDropDown}></div>
                     <input 
                         className='searchBar' 
                         value={this.state.value} 
@@ -53,6 +62,9 @@ class SearchBar extends Component {
                         onClick={this.clickHandler} 
                     />
                 </form>
+                {this.state.dropDownOn ? 
+                <DropDown handleDropDown={this.handleDropDown}/> 
+                : null}
             </div>
         )
     }

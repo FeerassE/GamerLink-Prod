@@ -3,7 +3,7 @@ import '../index.css';
 
 import StatContainer from './statContainer/StatContainer';
 import Rank from './Rank';
-import SearchBar from './SearchBar';
+import SearchBar from './searchBarContainer/SearchBar';
 
 class App extends Component {
   render() {
