@@ -14,7 +14,6 @@ class SearchBar extends Component {
 
         this.state = {
             value: 'Look up user',
-            redirect: false,
             dropDownOn: false
         };
         
@@ -24,6 +23,10 @@ class SearchBar extends Component {
         this.handleDropDown = this.handleDropDown.bind(this);
       }
 
+    componentDidMount(){
+        this.setState({redirect: false})
+    }
+
     onChangeHandler(event){
         this.setState({value: event.target.value})
     }
@@ -31,7 +34,7 @@ class SearchBar extends Component {
         event.preventDefault();
         if((this.props.users[this.state.value] == undefined)){
             console.log('User not found');
-            this.setState({redirect: true});
+            this.props.history.push('/notfound')
         }
         else {
             this.setState({redirect:false});
@@ -49,9 +52,9 @@ class SearchBar extends Component {
     }
 
     render() {
+        console.log(this.props.history)
         return(
             <div>
-                {this.state.redirect ? <Redirect to="/notfound"/> : <Redirect to="/"/>}
                 <form onSubmit={this.handleSubmit} className="searchForm">
                     <img src="./images/icons/search.png" className="searchIcon" onClick={this.handleSubmit}/>
                     <div className="arrow-down" onClick={this.handleDropDown}></div>
